@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulir Pendaftaran Mahasiswa Baru</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #aacab6;
+            margin: 20px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .container{
+            background: rgb(201, 203, 216);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        img{
+            display: block;
+            margin: auto;
+            width: 150px;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        select,
+        textarea{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        button{
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Judul Halaman -->
+        <h1>🎓Formulir Pendaftaran Mahasiswa Baru</h1>
+
+        <!-- Gambar Logo Kampus -->
+        <img src="https://via.placeholder.com/150" alt="Logo Kampus">
+
+        <br>
+
+        <!-- Formulir Pendaftaran -->
+        <form>
+
+            <!-- Nama Lengkap -->
+            <label for="nama">Nama Lengkap :</label>
+            <input type="text"
+                   id="nama"
+                   name="nama"
+                   placeholder="Masukkan nama lengkap"
+                   required>
+
+            <!-- Email -->
+            <label for="email">Email :</label>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   placeholder="contoh@gmail.com"
+                   required>
+
+            <!-- Nomor HP -->
+            <label for="hp">Nomor HP :</label>
+            <input type="tel"
+                   id="hp"
+                   name="hp"
+                   placeholder="08xxxxxxxxxx"
+                   required>
+
+            <!-- Radio Button -->
+            <label>Jenis Kelamin :</label><br>
+
+            <input type="radio"
+                   id="pria"
+                   name="jk"
+                   value="Pria">
+
+            <label for="pria">Pria</label>
+
+            <input type="radio"
+                   id="wanita"
+                   name="jk"
+                   value="Wanita">
+
+            <label for="wanita">Wanita</label>
+
+            <br><br>
+
+            <!-- Dropdown -->
+            <label for="jurusan">Jurusan :</label>
+
+            <select id="jurusan" name="jurusan">
+                <option>Pilih Jurusan</option>
+                <option>Teknik Informatika</option>
+                <option>Sistem Informasi</option>
+                <option>Manajemen</option>
+                <option>Akuntansi</option>
+            </select>
+
+            <!-- Textarea -->
+            <label for="alamat">Alamat :</label>
+
+            <textarea id="alamat"
+                      name="alamat"
+                      rows="5"
+                      placeholder="Masukkan alamat lengkap"></textarea>
+
+            <br>
+
+            <!-- Tombol Submit -->
+            <button type="submit">
+                Daftar Sekarang
+            </button>
+
+        </form>
+
+        <hr>
+
+        <!-- Biodata Mahasiswa -->
+        <h2>Biodata Mahasiswa</h2>
+
+        <ul>
+            <li>Nama : Alsya Sara</li>
+            <li>NIM : 202413007</li>
+            <li>Kelas : TI 2A</li>
+            <li>Program Studi : Sistem Informasi</li>
+        </ul>
+
+        <!-- Link Youtube -->
+        <h3>Link Youtube</h3>
+
+        <a href="https://youtu.be/4ot9IzcAPb8?si=738bODlk5kTcd4qc" target="_blank">
+            Kunjungi Youtube
+        </a>
+
+        <br><br>
+
+        <!-- Link Github -->
+        <a href="https://github.com" target="_blank">
+            Kunjungi Github
+        </a>
+
+    </div>
+
+</body>
+</html>
