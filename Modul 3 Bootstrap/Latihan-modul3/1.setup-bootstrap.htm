@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Website Bootstrap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">My Website</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#profil">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#layanan">Layanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#kontak">Kontak</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Home -->
+<section id="home" class="bg-light py-5">
+    <div class="container text-center">
+        <h1 class="display-4">Selamat Datang</h1>
+        <p class="lead">
+            Halo, nama saya <strong>Allsa sara</strong>.
+            Ini adalah contoh website sederhana menggunakan Bootstrap 5.
+        </p>
+        <a href="#profil" class="btn btn-primary btn-lg">Lihat Profil</a>
+    </div>
+</section>
+
+<!-- Profil -->
+<section id="profil" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Profil</h2>
+
+        <div class="card shadow">
+            <div class="card-body">
+                <h4>Alsasara</h4>
+                <p>
+                    Saya adalah mahasiswa yang sedang belajar HTML,
+                    CSS, dan Bootstrap untuk membuat website yang
+                    responsif dan menarik.
+                </p>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Nama</th>
+                        <td>Allsasara</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>Mahasiswa</td>
+                    </tr>
+                    <tr>
+                        <th>Hobi</th>
+                        <td>Belajar Coding</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>saraalsa@gmail.com</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Layanan -->
+<section id="layanan" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Layanan</h2>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card shadow mb-4">
+                    <div class="card-body text-center">
+                        <h4>Web Development</h4>
+                        <p>Membuat website modern, responsif, dan profesional.</p>
+                        <button class="btn btn-primary">Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow mb-4">
+                    <div class="card-body text-center">
+                        <h4>Mobile App</h4>
+                        <p>Mengembangkan aplikasi Android dan iOS sesuai kebutuhan.</p>
+                        <button class="btn btn-success">Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow mb-4">
+                    <div class="card-body text-center">
+                        <h4>Cloud Service</h4>
+                        <p>Menyediakan layanan penyimpanan data berbasis cloud.</p>
+                        <button class="btn btn-warning">Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Kontak -->
+<section id="kontak" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Kontak</h2>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <form>
+
+                    <div class="mb-3">
+                        <label class="form-label">Nama</label>
+                        <input type="text" class="form-control" placeholder="Masukkan nama">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Masukkan email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Pesan</label>
+                        <textarea class="form-control" rows="5" placeholder="Masukkan pesan"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Kirim Pesan
+                    </button>
+
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4>Informasi Kontak</h4>
+                        <p><strong>Nama :</strong> Allsasara</p>
+                        <p><strong>Email :</strong> saraalsa@gmail.com</p>
+                        <p><strong>No. HP :</strong> 0812-3456-7890</p>
+                        <p><strong>Alamat :</strong> Samarinda, Kalimantan Timur</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white text-center p-3">
+    <p class="mb-0">
+        © 2026 Allsa sara | Dibuat menggunakan Bootstrap 5
+    </p>
+</footer>
+
+</body>
+</html>

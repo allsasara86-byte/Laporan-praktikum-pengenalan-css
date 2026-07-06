@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifikasi Event Handling</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f8fb;
+            text-align:center;
+            margin-top:40px;
+        }
+
+        .container{
+            width:600px;
+            margin:auto;
+            padding:20px;
+            background:white;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        img{
+            width: 250px;px;
+            height:400px;
+            border-radius:10px;
+            transition:0.4s;
+            cursor:pointer;
+        }
+
+        #inputNama{
+            width:80%;
+            padding:10px;
+            margin-top:10px;
+            border:2px solid #ccc;
+            border-radius:5px;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        #hasil{
+            color:blue;
+            font-weight:bold;
+        }
+
+        #pesan{
+            color:green;
+            margin-top:8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Latihan Event Handling JavaScript</h2>
+
+    <h3>Event onmouseover & onmouseout</h3>
+
+    <img id="gambar"
+        src="kamari wasink.jpg"
+        alt="Gambar"
+        onmouseover="gantiGambar()"
+        onmouseout="kembalikanGambar()">
+
+    <hr>
+
+    <h3>Event onfocus & onchange</h3>
+
+    <label>Masukkan Nama:</label><br>
+
+    <input
+        type="text"
+        id="inputNama"
+        placeholder="Ketik nama..."
+        onfocus="fokusInput()"
+        onchange="tampilkanOutput()">
+
+    <p id="pesan"></p>
+
+    <p>
+        Output :
+        <span id="hasil">-</span>
+    </p>
+
+</div>
+
+<script>
+
+function gantiGambar(){
+    document.getElementById("gambar").src =
+    "ritsuki.jpeg";
+}
+
+function kembalikanGambar(){
+    document.getElementById("gambar").src =
+    "kamari wasink.jpg";
+}
+
+function fokusInput(){
+    document.getElementById("inputNama").style.backgroundColor="#ffffcc";
+    document.getElementById("pesan").innerHTML="Silakan ketik nama Anda.";
+}
+
+function tampilkanOutput(){
+    var nama = document.getElementById("inputNama").value;
+
+    document.getElementById("hasil").innerHTML="Halo, <b>"+nama+"</b>!";
+    document.getElementById("pesan").innerHTML="Data berhasil diperbarui.";
+}
+
+</script>
+
+</body>
+</html>

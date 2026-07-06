@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi Mahasiswa</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #8EC5FC, #E0C3FC);
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0d6efd;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background: #084298;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Form Registrasi Mahasiswa</h2>
+
+        <form onsubmit="return validasi()">
+
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama">
+
+            <small id="nama-error" class="error"></small>
+
+            <br><br>
+
+            <label>Email</label>
+            <input type="email" id="email">
+
+            <small id="email-error" class="error"></small>
+
+            <br><br>
+
+            <input type="submit" value="Daftar">
+
+        </form>
+
+    </div>
+
+    <script>
+
+        function validasi() {
+
+            var inputNama = document.getElementById("nama").value;
+            var inputEmail = document.getElementById("email").value;
+
+            var namaError = document.getElementById("nama-error");
+            var emailError = document.getElementById("email-error");
+
+            namaError.innerHTML = "";
+            emailError.innerHTML = "";
+
+            if (inputNama == "") {
+
+                namaError.innerHTML = "Nama tidak boleh kosong!";
+                return false;
+
+            }
+
+            if (inputEmail == "") {
+
+                emailError.innerHTML = "Email tidak boleh kosong!";
+                return false;
+
+            }
+
+            alert("Registrasi berhasil!");
+
+            return true;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

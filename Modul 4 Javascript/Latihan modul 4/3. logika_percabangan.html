@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Diskon Belanja</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .container {
+            width: 420px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #084298;
+        }
+
+        #hasil {
+            margin-top: 20px;
+            color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Kalkulator Diskon Belanja</h2>
+
+        <p>Masukkan total belanja Anda</p>
+
+        <input
+            type="number"
+            id="totalBelanja"
+            placeholder="Contoh : 150000">
+
+        <br>
+
+        <button onclick="cekDiskon()">
+            Cek Diskon
+        </button>
+
+        <h3 id="hasil"></h3>
+
+    </div>
+
+    <script>
+
+        function cekDiskon() {
+
+            var total = parseFloat(document.getElementById("totalBelanja").value);
+            var pesan = "";
+
+            if (isNaN(total)) {
+
+                pesan = "⚠ Mohon masukkan angka yang valid.";
+
+            }
+
+            else if (total >= 250000) {
+
+                var diskon = total * 0.15;
+                var totalBayar = total - diskon;
+
+                pesan =
+                    "Anda mendapatkan <b>Diskon 15%</b><br><br>" +
+                    "Potongan : Rp " + diskon.toLocaleString('id-ID') + "<br>" +
+                    "Total Bayar : <b>Rp " + totalBayar.toLocaleString('id-ID') + "</b>";
+
+            }
+
+            else if (total >= 100000) {
+
+                var diskon = total * 0.10;
+                var totalBayar = total - diskon;
+
+                pesan =
+                    " Anda mendapatkan <b>Diskon 10%</b><br><br>" +
+                    "Potongan : Rp " + diskon.toLocaleString('id-ID') + "<br>" +
+                    "Total Bayar : <b>Rp " + totalBayar.toLocaleString('id-ID') + "</b>";
+
+            }
+
+            else {
+
+                pesan =
+                    "Maaf, Anda belum mendapatkan diskon.<br><br>" +
+                    "Total Bayar : <b>Rp " + total.toLocaleString('id-ID') + "</b>";
+
+            }
+
+            document.getElementById("hasil").innerHTML = pesan;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

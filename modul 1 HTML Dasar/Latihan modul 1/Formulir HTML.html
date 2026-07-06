@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir Pendaftaran Mahasiswa</title>
+</head>
+<body>
+
+    <h1>Formulir Pendaftaran Mahasiswa Baru</h1>
+
+    <form action="/submit" method="post">
+
+        <label for="nim">NIM:</label><br>
+        <input type="text" id="nim" name="nim"><br><br>
+
+        <label for="nama">Nama Lengkap:</label><br>
+        <input type="text" id="nama" name="nama"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label>Jenis Kelamin:</label><br>
+        <input type="radio" id="laki" name="jk" value="Laki-laki">
+        <label for="laki">Laki-laki</label>
+
+        <input type="radio" id="perempuan" name="jk" value="Perempuan">
+        <label for="perempuan">Perempuan</label><br><br>
+
+        <label for="jurusan">Jurusan:</label><br>
+        <select id="jurusan" name="jurusan">
+            <option>Teknik Informatika</option>
+            <option>Sistem Informasi</option>
+            <option>Teknik Komputer</option>
+            <option>Manajemen Informatika</option>
+        </select><br><br>
+        
+        <label for="tanggal">Tanggal Lahir:</label><br>
+        <input type="date" id="tanggal" name="tanggal"><br><br>
+
+        <input type="submit" value="Daftar">
+        <input type="reset" value="Reset">
+
+    </form>
+
+</body>
+</html>

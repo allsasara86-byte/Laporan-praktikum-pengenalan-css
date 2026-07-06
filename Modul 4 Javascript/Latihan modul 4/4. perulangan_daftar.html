@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Teman Sekelas</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            width: 420px;
+            margin: auto;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0d6efd;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f8f9fa;
+            margin: 10px 0;
+            padding: 12px;
+            border-left: 6px solid #0d6efd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        li:hover {
+            background: #dbeafe;
+            transform: translateX(8px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Daftar Teman Sekelas</h2>
+
+        <ul id="daftar-teman">
+            <!-- Data akan ditampilkan oleh JavaScript -->
+        </ul>
+
+    </div>
+
+    <script>
+
+        var teman = [
+            "jenifer coppen",
+            "kamari",
+            "Zakia",
+            "jeje",
+            "nisa"
+        ];
+
+        var daftarElement = document.getElementById("daftar-teman");
+
+        for (let i = 0; i < teman.length; i++) {
+
+            daftarElement.innerHTML +=
+                "<li>" + teman[i] + "</li>";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

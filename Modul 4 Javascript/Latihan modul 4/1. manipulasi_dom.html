@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifikasi Manipulasi DOM</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        h1 {
+            display: inline-block;
+            padding: 15px 30px;
+            color: steelblue;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0d6efd;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #084298;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="judul">Selamat Datang di Praktikum JavaScript</h1>
+
+    <br>
+
+    <button onclick="ubahTeks()">
+        Ubah Tampilan
+    </button>
+
+    <script>
+        function ubahTeks() {
+
+            var elemenJudul = document.getElementById("judul");
+
+            elemenJudul.innerHTML = "Selamat! Manipulasi DOM Berhasil ✔";
+            elemenJudul.style.color = "white";
+            elemenJudul.style.backgroundColor = "crimson";
+
+            // Sesuai instruksi modul
+            elemenJudul.style.fontSize = "36px";
+
+            // Modifikasi tambahan
+            elemenJudul.style.border = "4px solid gold";
+            elemenJudul.style.borderRadius = "20px";
+            elemenJudul.style.padding = "20px";
+        }
+    </script>
+
+</body>
+
+</html>

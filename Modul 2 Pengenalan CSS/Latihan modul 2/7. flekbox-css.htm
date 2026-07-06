@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox Modern</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .item {
+            background-color: white;
+            color: #333;
+            padding: 30px;
+            width: 120px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .item:hover {
+            transform: translateY(-10px);
+            background-color: #4facfe;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+</body>
+</html>

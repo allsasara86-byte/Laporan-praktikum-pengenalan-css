@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toko Elektronik Cepat</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background:#f5f5f5;
+}
+.card{
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+#gambar{
+    width:100%;
+    height:430px;
+    object-fit:contain;
+    background:#fff;
+    padding:10px;
+}
+.list-group-item{9
+    cursor:pointer;
+}
+.list-group-item:hover{
+    background:#0d6efd;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+<h2 class="text-center">Toko Pixel store calsyc</h2>
+<p class="text-center" id="jam"></p>
+
+<div class="row">
+
+<div class="col-md-8">
+<div class="card">
+
+<img id="gambar">
+
+<div class="card-body">
+
+<h3 id="namaProduk"></h3>
+
+<h5 class="text-success" id="hargaProduk"></h5>
+
+<button class="btn btn-secondary" onclick="prev()">Previous</button>
+
+<button class="btn btn-primary" onclick="next()">Next</button>
+
+</div>
+
+</div>
+</div>
+
+<div class="col-md-4">
+
+<h4>Daftar Produk</h4>
+
+<ul class="list-group" id="daftar"></ul>
+
+</div>
+
+</div>
+
+<hr>
+
+<h4>Form Pemesanan</h4>
+
+<input class="form-control mb-2" id="nama" placeholder="Nama Pemesan">
+
+<input class="form-control mb-2" id="jumlah" type="number" placeholder="Jumlah Pesan">
+
+<input class="form-control mb-2" id="promo" placeholder="harga Produk">
+
+<button class="btn btn-success" onclick="pesan()">Pesan Sekarang</button>
+
+<div class="alert alert-info mt-3" id="hasil"></div>
+
+</div>
+
+<script>
+
+const produk=[
+
+{
+nama:"ASUS TUF Gaming",
+harga:12500000,
+gambar:["F16 Gamming.jpg","F16 Gamming.jpg"]
+},
+
+{
+nama:"Samsung Galaxy A56",
+harga:6500000,
+gambar:["galaxy ulttra.jpg","galaxy ulttra.jpg"]
+},
+
+{
+nama:"JBL Headphone",
+harga:850000,
+gambar:["headphone JBL.webp","headphone JBL.webp"]
+}
+
+];
+
+let p=0,g=0;
+
+function tampil(){
+
+gambar.src=produk[p].gambar[g];
+namaProduk.innerHTML=produk[p].nama;
+hargaProduk.innerHTML="Rp "+produk[p].harga.toLocaleString();
+
+}
+
+for(let i=0;i<produk.length;i++){
+
+daftar.innerHTML+=`
+<li class="list-group-item" onclick="pilih(${i})">
+${produk[i].nama}
+</li>
+`;
+
+}
+
+function pilih(i){
+
+p=i;
+g=0;
+tampil();
+
+}
+
+function next(){
+
+g=(g+1)%produk[p].gambar.length;
+tampil();
+
+}
+
+function prev(){
+
+g=(g-1+produk[p].gambar.length)%produk[p].gambar.length;
+tampil();
+
+}
+
+function pesan(){
+
+if(nama.value==""||jumlah.value==""){
+
+alert("Nama dan Jumlah harus diisi!");
+return;
+
+}
+
+let subtotal=produk[p].harga*jumlah.value;
+
+let diskon=promo.value.toUpperCase()=="DISKON10"?subtotal*0.1:0;
+
+let total=subtotal-diskon;
+
+hasil.innerHTML=`
+<b>Order ID :</b> INV-${Math.floor(Math.random()*10000)}<br>
+<b>Nama :</b> ${nama.value}<br>
+<b>Produk :</b> ${produk[p].nama}<br>
+<b>Jumlah :</b> ${jumlah.value}<br>
+<b>Subtotal :</b> Rp ${subtotal.toLocaleString()}<br>
+<b>Diskon :</b> Rp ${diskon.toLocaleString()}<br>
+<b>Total :</b> <b class="text-danger">Rp ${total.toLocaleString()}</b>
+`;
+
+}
+
+setInterval(()=>{
+jam.innerHTML=new Date().toLocaleString("id-ID");
+},1000);
+
+tampil();
+
+</script>
+
+</body>
+</html>

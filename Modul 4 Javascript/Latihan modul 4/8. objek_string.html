@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis Nama</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef4f8;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #d6dce5;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            text-align: center;
+            color: #3b5d7a;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #c7d0da;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 12px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #6c8ebf;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #6c8ebf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5b7ca8;
+        }
+
+        #hasilAnalisis {
+            margin-top: 18px;
+            line-height: 1.8;
+            color: #444;
+            background-color: #f8fafc;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Analisis Nama</h2>
+
+        <input
+            type="text"
+            id="inputNama"
+            placeholder="Masukkan nama Anda">
+
+        <button onclick="analisisNama()">
+            Analisis
+        </button>
+
+        <p id="hasilAnalisis"></p>
+
+    </div>
+
+    <script>
+
+        function analisisNama() {
+
+            var nama = document.getElementById("inputNama").value;
+            var hasil = "";
+
+            hasil += "Nama Asli : <b>" + nama + "</b><br>";
+
+            hasil += "Huruf Kapital : <b>" +
+                nama.toUpperCase() +
+                "</b><br>";
+
+            hasil += "Huruf Kecil : <b>" +
+                nama.toLowerCase() +
+                "</b><br>";
+
+            hasil += "Jumlah Karakter : <b>" +
+                nama.length +
+                "</b><br>";
+
+            hasil += "3 Karakter Pertama : <b>" +
+                nama.substring(0, 3) +
+                "</b>";
+
+            document.getElementById("hasilAnalisis").innerHTML = hasil;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
